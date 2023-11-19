@@ -1,28 +1,51 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Typography from "../components/Typography";
+import { useNavigate  } from "react-router-dom";
+import { AuthContext } from '../AuthContext';
+import {useEffect, useContext } from 'react';
 
 export default function Home() {
+  const navigate = useNavigate ();
+  const { setToken } = useContext(AuthContext);
+
+  useEffect(() => {
+    const hash = window.location.hash
+    let token = ""
+    if (hash) {
+      token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1]
+    }
+    
+    if (token) {
+      window.location.hash = '';
+      setToken(token);
+    }
+  }, [])
+
+  const handleNavigate = () => {
+    navigate('/About');
+  };
+
+  const handleLogin = () => {
+    window.location.href = 'http://localhost:5000/auth/spotify';
+  };
+
   return (
-    <Typography>
-      <h1>Home Page</h1>
-      <p>
-        Hello, world! This is a simple example of a React app. This app is based
-        on the create-react-app template, and it is intended to be used as a
-        starting point for new React projects.
-      </p>
-      <p>
-        This app is built using the following technologies:
-        <ul>
-          <li>React</li>
-          <li>React Router</li>
-          <li>React Tailwind CSS</li>
-          <li>React daisyUI</li>
-        </ul>
-      </p>
-      <p>
-        You can find the <Link to="/about">about</Link> page here.
-      </p>
-    </Typography>
+    <div className="flex flex-col justify-center items-center h-screen">
+      <div className="max-w-lg">
+        <h1 className="text-5xl font-bold mb-4">REWIND</h1>
+        <p className="mb-4">
+          Embark on a nostalgic musical journey with Rewind. Choose your era, feel the memories, and let the good times replay!
+        </p>
+          <button
+            className="btn btn-outline btn-secondary"
+            onClick={handleNavigate}>
+            Get started
+          </button>
+          <button
+            className="btn btn-outline btn-secondary"
+            onClick={handleLogin}>
+            Connect to spotify
+          </button>
+      </div>
+    </div>
   );
 }

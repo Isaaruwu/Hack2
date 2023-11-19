@@ -10,7 +10,7 @@ import { routes } from "./routes";
 // app config
 
 export const config = {
-  title: "daisyUI",
+  title: "Rewind",
   home: routes.home,
   pages: [routes.blog, routes.about, routes.settings],
   themes: [

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 @layer base {
   :root {
     --color-bg-base-light-100: hsl(var(--bc) / 0.1);
