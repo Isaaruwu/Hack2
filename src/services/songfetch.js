@@ -1,7 +1,7 @@
 
 export const fetchSongs = async (token, year, keywords) => {
     try {
-      const response = await fetch(`http://localhost:5000/request-songs`, {
+      const response = await fetch(`${process.env.REACT_APP_URL}request-songs`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -19,7 +19,7 @@ export const fetchSongs = async (token, year, keywords) => {
 
 export const createPlaylist = async (token, songs, name, description) => {
     try {
-      const response = await fetch(`http://localhost:5000/create-playlist`, {
+      const response = await fetch(`${process.env.REACT_APP_URL}create-playlist`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
