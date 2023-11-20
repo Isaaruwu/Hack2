@@ -17,8 +17,6 @@ export default function SpotifyModal() {
   };
   
   const ModalcreatePlaylist = () => {
-    console.log(songs)
-    console.log("Creating playlist with name:", name, "and description:", description);
     closeModal()
     handlePlaylistCreation()
   };
