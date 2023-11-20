@@ -1,5 +1,5 @@
 
-export const fetchSongs = async (token, year) => {
+export const fetchSongs = async (token, year, keywords) => {
     try {
       const response = await fetch(`http://localhost:5000/request-songs`, {
         method: 'POST',
@@ -7,7 +7,7 @@ export const fetchSongs = async (token, year) => {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
         },
-        body: JSON.stringify({ year: year }),
+        body: JSON.stringify({ year: year, keywords: keywords }),
       });
   
       return await response.json();
@@ -17,7 +17,7 @@ export const fetchSongs = async (token, year) => {
     }
 };
 
-export const createPlaylist = async (token, songs) => {
+export const createPlaylist = async (token, songs, name, description) => {
     try {
       const response = await fetch(`http://localhost:5000/create-playlist`, {
         method: 'POST',
@@ -25,7 +25,10 @@ export const createPlaylist = async (token, songs) => {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
         },
-        body: JSON.stringify({ songs: songs }),
+        body: JSON.stringify({ 
+          songs: songs, 
+          name: name, 
+          description: description}),
       });
   
       return await response.json();

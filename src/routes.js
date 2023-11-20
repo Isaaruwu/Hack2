@@ -1,7 +1,6 @@
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Blog from "./pages/Blog";
-import Settings from "./pages/Settings";
+import Era from "./pages/Era";
+import Playlist from "./pages/Playlist";
 
 export const routes = {
   home: {
@@ -9,19 +8,14 @@ export const routes = {
     path: "/",
     component: <Home />,
   },
-  about: {
-    name: "About",
-    path: "/about",
-    component: <About />,
+  era: {
+    name: "Era",
+    path: "/era",
+    component: <Era />,
   },
-  blog: {
-    name: "Blog",
-    path: "/blog",
-    component: <Blog />,
-  },
-  settings: {
-    name: "Settings",
-    path: "/settings",
-    component: <Settings />,
+  playlist: {
+    name: "Playlist",
+    path: "/playlist",
+    component: <Playlist />,
   }
 }

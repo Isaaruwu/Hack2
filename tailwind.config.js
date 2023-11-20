@@ -8,6 +8,6 @@ module.exports = {
   ],
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
   daisyui: {
-    themes: ["night", "winter", "synthwave", "cyberpunk"],
+    themes: ["retro", "dark", "synthwave"],
   },
 };

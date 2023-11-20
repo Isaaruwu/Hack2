@@ -3,13 +3,6 @@ import { Button } from "react-daisyui";
 import { themeChange } from "theme-change";
 import { MoonIcon } from "@heroicons/react/outline";
 
-// TODO: auto-variant:
-// 2 themes -> switch
-// > 2 themes -> dropdown
-
-//~ info ~//
-// this component does not use the react-daysyui
-// Dropdown component due to certain ui bugs
 
 export default function ThemeSwitch(props) {
   useEffect(() => {

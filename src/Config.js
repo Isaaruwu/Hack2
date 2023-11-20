@@ -12,11 +12,11 @@ import { routes } from "./routes";
 export const config = {
   title: "daisyUI",
   home: routes.home,
-  pages: [routes.blog, routes.about, routes.settings],
+  pages: [routes.era, routes.playlist],
   themes: [
     {
       name: "Light",
-      id: "winter",
+      id: "retro",
       icon: <SunIcon className="h-6 w-6" />,
     },
     {
@@ -27,11 +27,6 @@ export const config = {
     {
       name: "Synthwave",
       id: "synthwave",
-      icon: <StarIcon className="h-6 w-6" />,
-    },
-    {
-      name: "Cyberpunk",
-      id: "cyberpunk",
       icon: <CodeIcon className="h-6 w-6" />,
     },
   ],
