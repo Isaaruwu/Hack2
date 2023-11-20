@@ -21,7 +21,7 @@ export const config = {
     },
     {
       name: "Dark",
-      id: "dark",
+      id: "night",
       icon: <MoonIcon className="h-6 w-6" />,
     },
     {
