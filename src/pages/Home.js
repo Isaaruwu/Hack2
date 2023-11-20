@@ -33,7 +33,7 @@ export default function Home() {
 
   const handleSpotifyLogin = () => {
     setIsLoading(true);
-    window.location.href = 'http://localhost:5000/auth/spotify';
+    window.location.href = `${process.env.REACT_APP_URL}auth/spotify`;
   }
 
   return (
@@ -51,7 +51,7 @@ export default function Home() {
         
         <div className="font-bold mb-10">
           <h1 className="text-8xl">REWIND</h1>
-          <p className="pl-2">AI Powered</p>
+          <p className="pl-2">Powered By AI</p>
 
         </div>
         <p className="pl-2 mb-8">

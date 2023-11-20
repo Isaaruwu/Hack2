@@ -16,10 +16,6 @@ export const AuthProvider = ({ children }) => {
         setLoggedIn(true);
     }
 
-    const deconnect = () => {
-        setLoggedIn(false);
-    }
-
     const addSongs = (newSongs) => {
         setSongs([...songs, ...newSongs]);
     };
