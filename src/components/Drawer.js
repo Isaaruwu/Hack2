@@ -8,6 +8,7 @@ export default function Drawer(props) {
       className="bg-base-100 text-base-content overflow-y-auto w-80 p-2"
       vertical={true}
     >
+
       <Link to="/">
         <Button
           color="ghost"
